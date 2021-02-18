@@ -1,6 +1,10 @@
 # Final Project Demo
 ## Team Members
-Place your team member names here.
+Alex, thomson3@uw.edu
+Faisal, alsallum@uw.edu>
+Boda, lib32@uw.edu
+Steven, stevenw8@uw.edu
+Jeremiah, chengj29@uw.edu
 ### Contribution Statements
 Add individual contribution statements here.
 ## Project Proposal Abstract
