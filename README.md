@@ -1,6 +1,6 @@
 # Final Project Demo
 ## Team Members
-Alex, thomson3@uw.edu (test)
+Alex, thomson3@uw.edu
 
 Faisal, alsallum@uw.edu
 
