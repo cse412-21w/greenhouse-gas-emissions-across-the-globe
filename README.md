@@ -1,4 +1,4 @@
-# Final Project Demo
+# Final Project: Greenhouse Gas Emissions Across the Globe
 ## Team Members
 Alex, thomson3@uw.edu
 
