@@ -117,74 +117,65 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"../static/sunshine.csv":[function(require,module,exports) {
+module.exports = "/sunshine.5e299277.csv";
+},{}],"vegaDemo.js":[function(require,module,exports) {
+"use strict";
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
+var _sunshine = _interopRequireDefault(require("../static/sunshine.csv"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import dataset
+"use strict"; // the code should be executed in "strict mode".
+// With strict mode, you can not, for example, use undeclared variables
+
+
+var sunshineArray = []; // used to store data later
+
+var citySet = [];
+var options = {
+  config: {// Vega-Lite default configuration
+  },
+  init: function init(view) {
+    // initialize tooltip handler
+    view.tooltip(new vegaTooltip.Handler().call);
+  },
+  view: {
+    // view constructor options
+    // remove the loader if you don't want to default to vega-datasets!
+    //   loader: vega.loader({
+    //     baseURL: "",
+    //   }),
+    renderer: "canvas"
   }
+};
+vl.register(vega, vegaLite, options); // Again, We use d3.csv() to process data
 
-  return bundleURL;
-}
+d3.csv(_sunshine.default).then(function (data) {
+  data.forEach(function (d) {
+    sunshineArray.push(d);
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
+    if (!citySet.includes(d.city)) {
+      citySet.push(d.city);
     }
-  }
+  });
+  drawBarVegaLite();
+});
 
-  return '/';
+function drawBarVegaLite() {
+  // var sunshine = add_data(vl, sunshine.csv, format_type = NULL);
+  // your visualization goes here
+  vl.markBar({
+    filled: true,
+    color: 'teal'
+  }).data(sunshineArray).encode(vl.x().fieldN('month').sort('none'), vl.y().fieldQ('sunshine'), vl.tooltip(['sunshine'])).width(450).height(450).render().then(function (viewElement) {
+    // render returns a promise to a DOM element containing the chart
+    // viewElement.value contains the Vega View object instance
+    document.getElementById('view').appendChild(viewElement);
+  });
 }
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../static/sunshine.csv":"../static/sunshine.csv"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -212,7 +203,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51198" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62675" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -388,5 +379,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/index.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","vegaDemo.js"], null)
+//# sourceMappingURL=/vegaDemo.ea1a58a6.js.map

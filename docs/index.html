@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Greenhouse Gas Emissions Across the Globe</title>
-        <link rel="stylesheet" href="https://cse412.github.io/project-demo/style.ba16fa23.css">
+        <link rel="stylesheet" href="https://cse412.github.io/project-demo/style.791353fa.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <!-- For using d3 -->
         <script src="https://d3js.org/d3.v6.min.js"></script>
@@ -16,18 +16,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body class="firstPage" style="overflow: hidden; height: 100%;">
       <section class="title">
-        <a href="/">CSE 412 Final</a>
-      </section>
-      <section>
-        <h2>Final Project</h2>
-        <p> The Final Project!
+        <h2>CSE 412 Final Project</h2>
+        <p> Greenhouse Gas Emissions Across the Globe
         </p>
       </section>
       
       <section id="CO2 Emissions per Capita"> 
-        <h3>Embed a Tableau Visualization:</h3>
+        <h3>The Distribution of CO2 Emissions per Capita:
+        </h3>
         <div class="tableauPlaceholder" id="viz1614289459386" style="position: relative">
           <noscript>
             <a href="#">
@@ -69,27 +67,6 @@ var scriptElement = document.createElement('script');
 scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
 vizElement.parentNode.insertBefore(scriptElement, vizElement);</script>
       </section>
-      
-      <section id="vegaDemo">
-        <h3>Embed a Vega-Lite Visualization:</h3>
-        <div id="view"></div>
-      </section>
-    
-      <section id="d3Demo">
-        <h3>Embed a D3 Visualization:</h3>
-        <div id="d3-demo"></div>
-      </section>
-
-      <div class="footer">
-        <a href="https://courses.cs.washington.edu/courses/cse412/21wi/">CSE 412 Data Visualization</a>
-        <a href="http://www.washington.edu">University of Washington</a>
-      </div>
-
-      <!-- it is recommended to put js files before </body> -->
-      <!-- or check load event fot addEventListener() if you want to put js in the <head> -->
-      <script src="https://cse412.github.io/project-demo/d3Demo.c3cad310.js"></script>
-      <script src="https://cse412.github.io/project-demo/vegaDemo.40e2e530.js"></script>
-      
     </body>
 
 </html>

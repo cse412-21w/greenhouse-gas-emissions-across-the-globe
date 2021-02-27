@@ -9,7 +9,7 @@
  a, a:visited { text-decoration: none; color: #7533f4; }
 a:hover { text-decoration: underline; color: #f4b014; }
  h1, h2, h3, h4, h5 {
-  color: #492a7c;
+  color: #000000;
   background-color: inherit;
   font-weight: normal;
   padding: 0 0 5px 0;
@@ -29,7 +29,7 @@ p { margin: 0 0 10px 0; }
   background-color: #ffffff;
 }
  .title, .title h1, .title a {
-  color: #492a7c;
+  color: #000000;
   font-size: 24pt;
   margin-bottom: 20px;
   margin-top: 5px;
@@ -42,10 +42,10 @@ p { margin: 0 0 10px 0; }
   font-size: 12px;
 }
 .footer a {
-  color: #21346B;
+  color: #b5b5b5;
 }
 .footer a:hover {
-  color: #ce3333;
+  color: #b5b5b5;
 }
 
 /*# sourceMappingURL=/style.e308ff8e.css.map */
