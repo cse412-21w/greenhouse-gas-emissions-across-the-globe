@@ -1,23 +1,23 @@
 {
-  "name": "project-demo",
+  "name": "greenhouse-gas-emissions-across-the-globe",
   "version": "1.0.0",
   "description": "Demo examples of vega-lite, d3.js, and Tableau visualizations",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html --no-minify --public-url https://cse412.github.io/project-demo/; rm -rf docs; mv dist docs;"
+    "build": "parcel build src/index.html --no-minify --public-url https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/docs/; rm -rf docs; mv dist docs;"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cse412/project-demo.git"
+    "url": "git+https://github.com/cse412/greenhouse-gas-emissions-across-the-globe.git"
   },
   "author": "cse412-staff",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cse412/project-demo/issues"
+    "url": "https://github.com/cse412/greenhouse-gas-emissions-across-the-globe/issues"
   },
-  "homepage": "https://github.com/cse412/project-demo#readme",
+  "homepage": "https://github.com/cse412/greenhouse-gas-emissions-across-the-globe#readme",
   "devDependencies": {
     "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.4",
