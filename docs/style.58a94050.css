@@ -3,7 +3,8 @@
   margin: 0 auto 0 auto;
   padding: 0;
   max-width: 1200px;
-  font-family: "Avenir", "Avenir Next", Helvetica Neue, Arial;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
   font-size: 0.95em;
 }
  a, a:visited { text-decoration: none; color: #7533f4; }
@@ -11,7 +12,7 @@ a:hover { text-decoration: underline; color: #f4b014; }
  h1, h2, h3, h4, h5 {
   color: #000000;
   background-color: inherit;
-  font-weight: normal;
+  font-weight: 300;
   padding: 0 0 5px 0;
   margin: 15px 0 0 0;
   border: none;
@@ -30,8 +31,11 @@ p { margin: 0 0 10px 0; }
 }
  .title, .title h1, .title a {
   color: #000000;
-  font-size: 24pt;
-  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 42pt;
+  margin-bottom: 60px;
   margin-top: 5px;
 }
  .footer {
@@ -48,4 +52,4 @@ p { margin: 0 0 10px 0; }
   color: #b5b5b5;
 }
 
-/*# sourceMappingURL=https://cse412.github.io/project-demo/style.791353fa.css.map */
+/*# sourceMappingURL=https://cse412.github.io/project-demo/style.58a94050.css.map */
