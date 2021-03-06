@@ -133,7 +133,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var datapoints = []; // used to store data later
 
-var filtered = []; //var sortedGDP = CO2_GDPdata
+var filtered = [];
+var SortedGDP2 = []; //var sortedGDP = CO2_GDPdata
 //.filter(d => d['Country'] == 'High income' || d['Country'] == 'Low income' || d['Country'] == 'Upper middle income' || d['Country'] == 'Lower middle income')
 //console.log(CO2_GDPdata)
 
@@ -163,6 +164,14 @@ d3.csv(_CO2_GDPdata.default).then(function (data) {
       filtered.push(d);
     }
   });
+  SortedGDP2 = filtered.map(function (d) {
+    return {
+      Country: d.Country,
+      Year: +d.Year,
+      CO2: +d.CO2,
+      GDP: +d.GDP
+    };
+  });
   drawPlotVegaLite();
 });
 
@@ -177,7 +186,7 @@ function drawPlotVegaLite() {
 
   return vl.markPoint({
     filled: true
-  }).data(filtered).select(selection).encode(vl.color().if(selection, vl.value('gold')).value("gray"), vl.x().fieldQ('GDP'), vl.y().fieldQ('CO2'), vl.opacity().if(selection).value(0.1), vl.tooltip().fieldQ('Year')).width(450).height(450).render().then(function (viewElement) {
+  }).data(SortedGDP2).select(selection).encode(vl.color().if(selection, vl.value('green')).value("gray"), vl.x().fieldQ('GDP'), vl.y().fieldQ('CO2'), vl.opacity().if(selection).value(0.1), vl.tooltip().fieldQ('Year'), vl.size().value(100)).width(450).height(450).render().then(function (viewElement) {
     document.getElementById('view').appendChild(viewElement);
   });
 }
@@ -209,7 +218,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42041" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37061" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

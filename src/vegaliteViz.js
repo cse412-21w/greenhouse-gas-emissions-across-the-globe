@@ -4,6 +4,7 @@ import CO2_GDPdata from '../static/CO2_GDPdata.csv'    // import dataset
 
 var datapoints = [];   // used to store data later
 var filtered = [];
+var SortedGDP2 = [];
 
 //var sortedGDP = CO2_GDPdata
  //.filter(d => d['Country'] == 'High income' || d['Country'] == 'Low income' || d['Country'] == 'Upper middle income' || d['Country'] == 'Lower middle income')
@@ -35,10 +36,18 @@ vl.register(vega, vegaLite, options);
 d3.csv(CO2_GDPdata).then(function(data) {
   data.forEach(function(d){
     datapoints.push(d);
-    if (d.Country == 'High income' || d.Country == 'Low income' || d.Country == 'Lower middle income' || d.Country == 'Upper middle income') {
+    if (d.Country == 'High income' ||
+	d.Country == 'Low income' ||
+	d.Country == 'Lower middle income' ||
+	d.Country == 'Upper middle income') {
        filtered.push(d);
      }
-  })
+  });
+
+  SortedGDP2 = filtered.map((d) => {
+	return { Country:d.Country, Year: +d.Year, CO2: +d.CO2, GDP: +d.GDP };
+  });
+
   drawPlotVegaLite();
 });
 
@@ -52,14 +61,15 @@ function drawPlotVegaLite() {
 
     // Nothing changed below
     return vl.markPoint({filled:true})
-   .data(filtered)
+   .data(SortedGDP2)
    .select(selection)
    .encode(
-     vl.color().if(selection, vl.value('gold')).value("gray"),
+     vl.color().if(selection, vl.value('green')).value("gray"),
      vl.x().fieldQ('GDP'),
      vl.y().fieldQ('CO2'),
      vl.opacity().if(selection).value(0.1),
-     vl.tooltip().fieldQ('Year')
+     vl.tooltip().fieldQ('Year'),
+     vl.size().value(100)
    )
    .width(450)
    .height(450)
