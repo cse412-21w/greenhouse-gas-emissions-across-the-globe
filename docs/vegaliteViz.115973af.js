@@ -177,7 +177,7 @@ d3.csv(_CO2_GDPdata.default).then(function (data) {
 
 function drawPlotVegaLite() {
   var selection = vl.selectSingle('Sorted Income').fields('Country', 'Year').init({
-    Country: 'Low income',
+    Country: 'High income',
     Year: '1960'
   }).bind({
     Country: vl.menu(['Low income', 'High income', 'Upper middle income', 'Lower middle income']),
@@ -191,4 +191,4 @@ function drawPlotVegaLite() {
   });
 }
 },{"../static/CO2_GDPdata.csv":"ZBcX"}]},{},["yubi"], null)
-//# sourceMappingURL=https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/vegaliteViz.a024e9f8.js.map
+//# sourceMappingURL=https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/vegaliteViz.115973af.js.map
