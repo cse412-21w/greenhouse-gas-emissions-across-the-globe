@@ -55,7 +55,7 @@ d3.csv(CO2_GDPdata).then(function(data) {
 function drawPlotVegaLite() {
   const selection = vl.selectSingle('Sorted Income')
    .fields('Country','Year')         
-   .init({Country: 'Low income', Year: '1960'})  
+   .init({Country: 'High income', Year: '1960'})  
    .bind({Country: vl.menu(['Low income','High income','Upper middle income','Lower middle income']),Year: vl.slider(1960,2016,1)});
 
 
