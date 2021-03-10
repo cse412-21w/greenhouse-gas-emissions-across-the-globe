@@ -82,6 +82,24 @@
           }).catch(console.error);
         </script>
 
+        <div id="vis2"></div>
+          
+        <script type="text/javascript">
+          var spec = "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/src/totalmap.json";
+          vegaEmbed('#vis2', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
+
+        <div id="vis3"></div>
+                  
+        <script type="text/javascript">
+          var spec = "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/src/gdpmap.json";
+          vegaEmbed('#vis3', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
+
     </body>
 
 </html>
