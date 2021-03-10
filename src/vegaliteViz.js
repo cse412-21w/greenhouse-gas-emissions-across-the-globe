@@ -45,7 +45,7 @@ d3.csv(CO2_GDPdata).then(function(data) {
   });
 
   SortedGDP2 = filtered.map((d) => {
-	return { Country:d.Country, Year: +d.Year, CO2: +d.CO2, GDP: +d.GDP };
+	return { Country:d.Country, Year: +d.Year, CO2: +d.CO2, GDP: +d.GDP, CO2perCapita: +d.CO2perCapita, GDPperCapita: +d.GDPperCapita };
   });
 
   drawPlotVegaLite();
