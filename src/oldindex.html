@@ -13,6 +13,10 @@
         <script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite-api"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script>
+        <!-- For using vega -->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     </head>
 
@@ -24,44 +28,6 @@
         <h3>By: Alexander Thomson, Faisal Alsallum, Steven Wilson, Boda Li, Jeremiah Cheng</h3>
       </section>
       </div>
-
-        <section id = "CO2 Emissions per Capita">
-        <h1>The Distribution of CO2 Emissions per Capita:</h1>
-        <div class='tableauPlaceholder' id='viz1614289459386' style='position: relative'>
-          <noscript>
-            <a href='#'>
-              <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;CO2Map_16142419288300&#47;Dashboard1&#47;1_rss.png' style='border: none' />
-              </a>
-              </noscript>
-              <object class='tableauViz'  style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='site_root' value='' />
-                <param name='name' value='CO2Map_16142419288300&#47;Dashboard1' />
-                <param name='tabs' value='no' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;CO2Map_16142419288300&#47;Dashboard1&#47;1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='en' />
-                <param name='filter' value='publish=yes' />
-                </object>
-                </div>
-                <script type='text/javascript'>
-                var divElement = document.getElementById('viz1614289459386');
-                var vizElement = divElement.getElementsByTagName('object')[0];
-                if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';}
-                else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';}
-                else { vizElement.style.width='100%';vizElement.style.height='777px';}
-                var scriptElement = document.createElement('script');
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);
-                </script>
-      </section>
-
 
         <section id = "Global Temp">
           <h1>Global Surface-Ocean Index compared to Global CO2 Emission :
@@ -102,11 +68,19 @@
               </section>
 
 	      <section id = "vegaDemo">
-		<h3>Embed my vegalite viz:</h3>
-		<div id="view"></div>
+		      <h3>Embed my vegalite viz:</h3>
+		      <div id="view"></div>
 	      </section>
+        <script src="vegaliteViz.js"></script>
 
-	      <script src="vegaliteViz.js"></script>
+        <div id="vis"></div>
+  
+        <script type="text/javascript">
+          var spec = "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/src/capitamap.json";
+          vegaEmbed('#vis', spec).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+          }).catch(console.error);
+        </script>
 
     </body>
 
