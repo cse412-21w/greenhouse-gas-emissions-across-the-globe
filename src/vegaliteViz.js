@@ -1,4 +1,4 @@
-import CO2_GDPdata from '../static/CO2_GDPdata.csv'    // import dataset
+import CO2_GDPdata from '../static/CO2_GDPdata_edit.csv'    // import dataset
 "use strict";     // the code should be executed in "strict mode".
                   // With strict mode, you can not, for example, use undeclared variables
 
@@ -65,14 +65,14 @@ function drawPlotVegaLite() {
    .select(selection)
    .encode(
      vl.color().if(selection, vl.value('green')).value("gray"),
-     vl.x().fieldQ('GDP'),
-     vl.y().fieldQ('CO2'),
+     vl.x().fieldQ('GDPperCapita'),
+     vl.y().fieldQ('CO2perCapita'),
      vl.opacity().if(selection).value(0.1),
-     vl.tooltip().fieldQ('Year'),
+     vl.tooltip(['Year','Country']),
      vl.size().value(100)
    )
-   .width(450)
-   .height(450)
+   .width(900)
+   .height(800)
    .render()
    .then(viewElement => {
 	document.getElementById('view').appendChild(viewElement);
