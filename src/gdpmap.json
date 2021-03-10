@@ -10,7 +10,7 @@
   [
     {
       "name": "env",
-      "url": "data/climate-change3.csv",
+      "url": "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/static/data/climate-change3.csv",
       "format": {"type": "csv", "parse": "auto"},
       "transform": [
         { "type": "filter", "expr":"datum.Year == Year"}
@@ -18,7 +18,7 @@
     },
     {
       "name": "world",
-      "url": "data/world-110m.json",
+      "url": "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/static/data/world-110m.json",
       "format": {"type": "topojson", "feature": "countries"},
       "transform": [
         { "type": "lookup", "from": "env", "key": "id", "fields": ["id"], "values": ["Year", "Country", "Population", "CO2PerCapita", "CO2Total", "CO2PerGDP", "Rank"]}, 
