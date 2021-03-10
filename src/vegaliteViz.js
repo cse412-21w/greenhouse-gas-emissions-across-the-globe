@@ -1,4 +1,4 @@
-import CO2_GDPdata from '../static/CO2_GDPdata.csv'    // import dataset
+import CO2_GDPdata from '../static/CO2_GDPdata_edit.csv'    // import dataset
 "use strict";     // the code should be executed in "strict mode".
                   // With strict mode, you can not, for example, use undeclared variables
 
