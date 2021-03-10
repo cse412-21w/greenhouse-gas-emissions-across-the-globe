@@ -1,0 +1,175 @@
+{
+
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A world map showing the C02 emissions per capita of each country.",
+  "width": 900,
+  "padding": 5,
+
+
+  "data": 
+  [
+    {
+      "name": "env",
+      "url": "data/climate-change3.csv",
+      "format": {"type": "csv", "parse": "auto"},
+      "transform": [
+        { "type": "filter", "expr":"datum.Year == Year"}
+      ]
+    },
+    {
+      "name": "world",
+      "url": "data/world-110m.json",
+      "format": {"type": "topojson", "feature": "countries"},
+      "transform": [
+        { "type": "lookup", "from": "env", "key": "id", "fields": ["id"], "values": ["Year", "Country", "Population", "CO2PerCapita", "CO2Total", "CO2PerGDP", "Rank"]}, 
+        { "type": "filter", "expr": "datum.Year == Year"},
+        { "type": "filter", "expr": "datum.CO2PerCapita != null"},
+        {
+          "type": "window",
+          "sort": {"field": "CO2PerCapita", "order": "descending"},
+          "ops": ["row_number"], "as": ["Rank"]
+        }
+      ]
+    },
+    {
+      "name": "graticule",
+      "transform": [
+        { "type": "graticule", "step": [15, 15] }
+      ]
+    }
+  ],
+
+  "projections": 
+  [
+    {
+      "name": "projection",
+      "type": "mercator",
+      "scale": {"signal": "scale"},
+      "rotate": [{"signal": "rotateX"}, 0, 0],
+      "center": [0, {"signal": "centerY"}],
+      "translate": [{"signal": "tx"}, {"signal": "ty"}]
+    }
+  ],
+
+  "scales": 
+  [
+    {
+      "name": "color",
+      "type": "linear",
+      "domain": [0, 16],
+      "range": {"scheme": "blues", "count": 50}
+    }
+  ],
+
+  "legends": 
+  [
+    {
+      "fill": "color",
+      "orient": "none",
+      "title": "CO2 Emissions Per Capita",
+      "format": "1",
+      "legendX": 1000,
+      "legendY": -150
+    }
+  ],
+
+  "marks": [
+    {
+      "type": "shape",
+      "from": {"data": "world"},
+      "encode": {
+        "enter": 
+        { 
+          "tooltip": 
+          {
+            "signal":"datum"
+          }
+        },
+        "update": { 
+          "fill": {"scale": "color", "field": "CO2PerCapita"},
+          "strokeWidth": {"signal": "0.5"},
+          "stroke": {"value":"#000"},
+          "zindex": {"value": 0}
+        },
+        "hover": {
+          "strokeWidth": {"signal": "1.5"},
+          "stroke": {"value":"firebrick"},
+          "zindex": {"value": 1}
+        }
+      },
+      "transform": [
+        { "type": "geoshape", "projection": "projection" }
+      ]
+    }
+  ],
+
+  "signals": [
+    {"name": "k", "value": 10},
+    { "name": "tx", "update": "width / 2" },
+    { "name": "ty", "update": "height / 2" },
+    { "name": "Year", "value": 1992,
+      "bind": {"input": "range", "min": 1992, "max": 2014, "step": 1}
+    },
+    {
+      "name": "scale",
+      "value": 150,
+      "on": [{
+        "events": {"type": "wheel", "consume": true},
+        "update": "clamp(scale * pow(1.0005, -event.deltaY * pow(16, event.deltaMode)), 150, 3000)"
+      }]
+    },
+    {
+      "name": "angles",
+      "value": [0, 0],
+      "on": [{
+        "events": "mousedown",
+        "update": "[rotateX, centerY]"
+      }]
+    },
+    {
+      "name": "cloned",
+      "value": null,
+      "on": [{
+        "events": "mousedown",
+        "update": "copy('projection')"
+      }]
+    },
+    {
+      "name": "start",
+      "value": null,
+      "on": [{
+        "events": "mousedown",
+        "update": "invert(cloned, xy())"
+      }]
+    },
+    {
+      "name": "drag", "value": null,
+      "on": [{
+        "events": "[mousedown, window:mouseup] > window:mousemove",
+        "update": "invert(cloned, xy())"
+      }]
+    },
+    {
+      "name": "delta", "value": null,
+      "on": [{
+        "events": {"signal": "drag"},
+        "update": "[drag[0] - start[0], start[1] - drag[1]]"
+      }]
+    },
+    {
+      "name": "rotateX", "value": 0,
+      "on": [{
+        "events": {"signal": "delta"},
+        "update": "angles[0] + delta[0]"
+      }]
+    },
+    {
+      "name": "centerY", "value": 0,
+      "on": [{
+        "events": {"signal": "delta"},
+        "update": "clamp(angles[1] + delta[1], -60, 60)"
+      }]
+    }
+  ]
+
+}
