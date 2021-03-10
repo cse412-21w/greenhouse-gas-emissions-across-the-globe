@@ -169,7 +169,9 @@ d3.csv(_CO2_GDPdata.default).then(function (data) {
       Country: d.Country,
       Year: +d.Year,
       CO2: +d.CO2,
-      GDP: +d.GDP
+      GDP: +d.GDP,
+      CO2perCapita: +d.CO2perCapita,
+      GDPperCapita: +d.GDPperCapita
     };
   });
   drawPlotVegaLite();
@@ -218,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55338" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57393" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -3,6 +3,7 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "A world map showing the C02 emissions per capita of each country.",
   "width": 900,
+  "height": 500,
   "padding": 5,
 
 
@@ -17,8 +18,8 @@
       ]
     },
     {
-      "name": "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/static/data/world-110m.json",
-      "url": "data/world-110m.json",
+      "name": "world",
+      "url": "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/static/data/world-110m.json",
       "format": {"type": "topojson", "feature": "countries"},
       "transform": [
         { "type": "lookup", "from": "env", "key": "id", "fields": ["id"], "values": ["Year", "Country", "Population", "CO2PerCapita", "CO2Total", "CO2PerGDP", "Rank"]}, 

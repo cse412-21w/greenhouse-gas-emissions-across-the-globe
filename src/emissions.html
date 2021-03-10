@@ -19,17 +19,9 @@
       <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     </head>
     <body class="firstPage">
-      <section id = "CO2 Emissions per Capita">
-      <h1>The Distribution of CO2 Emissions per Capita:</h1>
-      <div id="vis"></div>
-  
-      <script type="text/javascript">
-        var spec = "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/src/capitamap.json";
-        vegaEmbed('#vis', spec).then(function(result) {
-          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
-      </script>
+    <section id = "Maps of CO2 Emissions">
 
+      <h3>The Distribution of Total CO2 Emissions:</h3>
       <div id="vis2"></div>
         
       <script type="text/javascript">
@@ -39,11 +31,22 @@
         }).catch(console.error);
       </script>
 
+      <h3>The Distribution of CO2 Emissions per GDP:</h3>
       <div id="vis3"></div>
                 
       <script type="text/javascript">
         var spec = "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/src/gdpmap.json";
         vegaEmbed('#vis3', spec).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      </script>
+
+      <h3>The Distribution of CO2 Emissions per Capita:</h3>
+      <div id="vis4"></div>
+        
+      <script type="text/javascript">
+        var spec = "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/src/capitamap.json";
+        vegaEmbed('#vis4', spec).then(function(result) {
           // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
       </script>

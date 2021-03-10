@@ -1,8 +1,9 @@
 {
 
   "$schema": "https://vega.github.io/schema/vega/v5.json",
-  "description": "A world map showing the C02 emissions per capita of each country.",
+  "description": "A world map showing the C02 emissions of each country.",
   "width": 900,
+  "height": 500,
   "padding": 5,
 
 
