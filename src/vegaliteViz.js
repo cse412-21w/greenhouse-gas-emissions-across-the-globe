@@ -72,7 +72,7 @@ function drawPlotVegaLite() {
      vl.size().value(100)
    )
    .width(900)
-   .height(800)
+   .height(550)
    .render()
    .then(viewElement => {
 	document.getElementById('view').appendChild(viewElement);
