@@ -22,20 +22,18 @@
             <a class="navbar-brand" href="https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/index.html">CSE412 Environment Visualizations</a>
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/emissions2.html">Next Visualization <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/emissions3.html">Next Visualization <span class="sr-only">(current)</span></a>
               </li>
             </ul>
           </div>
         </nav>
     </head>
     <body>
-        <h1> Total CO2 Emission Map 1992 - 2014</h1>
-          <div id="vis2"></div>
-          <div>
-            The first map (green) shows how total CO2 emissions are distributed across the globe by country between 1992 and 2014. We see that there are a handful of countries that have considerably higher emissions than the rest of the world. The top two producers are clearly the United States and Russia. India and Russia switch places for third. The United States both starts and ends as one of the largest producers of CO2 throughout the 22 year period. China’s emissions on the other hand starts out well below the US, and grows considerably after the turn of the century, establishing China as by far the largest producer of CO2 in the world.
-          </div>
-          <script>var spec = "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/src/totalmap.json";
-vegaEmbed('#vis2', spec).then(function (result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        <h1> CO2 Emissions Per GDP 1992-2014</h1>
+            <div id="vis3"></div>
+            <div>The second map (red) shows the distribution of CO2 emissions across the globe by country and controlled by GDP. We see that in the 1990s most of Asia had by far the highest CO2 per GDP. If we look at the previous map this can be explained by these countries having large CO2 emissions and low GDPs. North America also has reasonably high CO2 emissions per capita throughout the 22 year period. As time progresses, the CO2 emissions per GDP for most of the countries that previously had disproportionately large emissions seem to fall and approach the global average.</div>
+            <script>var spec = "https://raw.githubusercontent.com/cse412-21w/greenhouse-gas-emissions-across-the-globe/main/src/gdpmap.json";
+vegaEmbed('#vis3', spec).then(function (result) {// Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);</script>
       </body>
 
