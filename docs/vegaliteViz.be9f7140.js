@@ -193,4 +193,4 @@ function drawPlotVegaLite() {
   });
 }
 },{"../static/CO2_GDPdata_edit.csv":"MvzZ"}]},{},["yubi"], null)
-//# sourceMappingURL=https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/vegaliteViz.cc6d87ad.js.map
+//# sourceMappingURL=https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/vegaliteViz.be9f7140.js.map
