@@ -79,18 +79,15 @@
       "type": "shape",
       "from": {"data": "world"},
       "encode": {
-        "enter": 
-        { 
-          "tooltip": 
-          {
-            "signal":"datum"
-          }
-        },
         "update": { 
           "fill": {"scale": "color", "field": "CO2PerGDP"},
           "strokeWidth": {"signal": "0.5"},
           "stroke": {"value":"#000"},
-          "zindex": {"value": 0}
+          "zindex": {"value": 0},
+          "tooltip": 
+          {
+            "signal": "{'Year': datum.Year, 'Country': datum.Country, 'Population': datum.Population, 'CO2 Emission Per Capita  (metric tons per capita)': datum.CO2PerCapita, 'Total CO2 Emissions (kt)': datum.CO2Total, 'CO2 Emissions Per GDP (kg per PPP $ of GDP)': datum.CO2PerGDP, 'Rank': datum.Rank}"
+          }
         },
         "hover": {
           "strokeWidth": {"signal": "1.5"},
