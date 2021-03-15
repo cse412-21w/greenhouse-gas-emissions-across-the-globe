@@ -70,7 +70,7 @@
       "name": "projection",
       "type": "mercator",
       "scale": {"signal": "scale"},
-      "clipExtent": [[-300, -300],[400, 500]],
+      "clipExtent": [[-300, -100],[600, 500]],
       "rotate": [{"signal": "rotateX"}, 0, 0],
       "center": [0, {"signal": "centerY"}],
       "translate": [{"signal": "tx"}, {"signal": "ty"}]
@@ -132,17 +132,6 @@
             { "type": "geoshape", "projection": "projection" }
           ]
         }
-      ],
-      "legends": 
-      [
-        {
-          "fill": "color",
-          "orient": "none",
-          "title": "Total CO2 Emission",
-          "format": "1",
-          "legendX": -450,
-          "legendY": -150
-        }
       ]
     },
     {
@@ -179,6 +168,19 @@
           "orient": "left"
         }
       ]
+    }
+  ],
+
+  "legends": 
+  [
+    {
+      "fill": "color",
+      "orient": "none",
+      "title": "Total CO2 Emissions",
+      "format": "1",
+      "direction": "horizontal",
+      "legendX": 50,
+      "legendY": -150
     }
   ],
 
