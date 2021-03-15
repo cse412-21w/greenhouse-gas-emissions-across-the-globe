@@ -45,11 +45,8 @@
       "format": {"type": "csv", "parse": "auto"},
       "transform": [
         { "type": "filter", "expr":"datum.Year == Year"},
-        {
-          "type": "window",
-          "sort": {"field": "CO2PerCapita", "order": "descending"},
-          "ops": ["row_number"], "as": ["Rank"]
-        },
+        { "type": "lookup", "from": "world", "key": "id", "fields": ["id"], "values": ["Rank"]},
+        { "type": "filter", "expr": "datum.Rank != null"},
         {
           "type": "filter",
           "expr": "datum.Rank <= k"
