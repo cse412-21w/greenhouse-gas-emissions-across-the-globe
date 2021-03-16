@@ -29,5 +29,11 @@ https://cse412-21w.github.io/greenhouse-gas-emissions-across-the-globe/
 ## Other notes
 This project was created as part of the course "CSE 412: Introduction To Data Visualization" from University of Washington in Winter Quarter 2021
 
-#### Acknowledgements
+## Acknowledgements and Sources
 The title picture is from University of EXETER project, Global Climate Change: Environment, Technology & Society. 
+
+Data from: https://github.com/ZeningQu/World-Bank-Data-by-Indicators
+
+A thank you to the designers of Vega for the useful examples: https://vega.github.io/vega/examples/
+
+
