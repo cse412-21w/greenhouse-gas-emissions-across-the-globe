@@ -20,7 +20,7 @@ Steven Wilson: Created the CO2 emissions versus GDP interactive visualization in
 Jeremiah Cheng: Created the website where we posted our visualizations.
 
 ## Project Proposal Abstract
-This is the space for you to add a description for your project.
+Originally, for this project, we decided to investigate the topic climate change as it is both currently a pressing issue for the modern world and will likely remain so for the foreseeable future. In our webpage, we broke down our presentation of the problem into two sections. In one section we visually present the topic of global warming, its relationship with increased carbon dioxide emissions, and one of its more general effects, the rising sea level so that an otherwise uniformed viewer might better understand the issue. In the other half of our website, we explore how the various countries across the globe are contributing to global warming via their yearly CO2 emissions and see how factors such as population and GDP affect those figures.
 
 ## Getting Started
 
