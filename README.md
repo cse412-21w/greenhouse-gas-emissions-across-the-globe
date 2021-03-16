@@ -11,7 +11,14 @@ Steven, stevenw8@uw.edu
 Jeremiah, chengj29@uw.edu
 
 ### Contribution Statements
-Add individual contribution statements here.
+Alexander Thomson: Created the three interactive CO2 emissions maps included in emissions.html, emissions2.html, emissions3.html.
+
+Faisal Alsallum: Created the global surface-ocean index/world average CO2 emission comparison visual in globaltemp.html, the average yearly temperature map in globalatemp2.html, and the plot showing the change in sea level in globaltemp3.html. 
+
+Steven Wilson: Created the CO2 emissions versus GDP interactive visualization in gdp.html.
+
+Jeremiah Cheng: Created the website where we posted our visualizations.
+
 ## Project Proposal Abstract
 This is the space for you to add a description for your project.
 
