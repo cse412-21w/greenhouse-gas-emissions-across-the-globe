@@ -34,6 +34,10 @@ The title picture is from University of EXETER project, Global Climate Change: E
 
 Data from: https://github.com/ZeningQu/World-Bank-Data-by-Indicators
 
+Dasgupta, S., Laplante, B., Meisner, C. et al. The impact of sea level rise on developing countries: a comparative analysis. Climatic Change 93, 379–388 (2009). https://doi.org/10.1007/s10584-008-9499-5
+
+
+
 A thank you to the designers of Vega for the useful examples: https://vega.github.io/vega/examples/
 
 
