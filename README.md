@@ -12,7 +12,7 @@ Steven, stevenw8@uw.edu
 Jeremiah, chengj29@uw.edu
 
 ### Contribution Statements
-Alexander Thomson: Created the three interactive CO2 emissions maps included in emissions.html, emissions2.html, emissions3.html.
+Alexander Thomson: Created the three interactive CO2 emissions maps included in emissions.html, emissions2.html, emissions3.html. Wrote the conclusion.
 
 Faisal Alsallum: Created the global surface-ocean index/world average CO2 emission comparison visual in globaltemp.html, the average yearly temperature map in globalatemp2.html, the plot showing the change in sea level in globaltemp3.html, and the plot showing the predicted effects of a 1m sea level increases on country GDP found in globaltemp4.html.
 
